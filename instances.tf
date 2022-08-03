@@ -8,8 +8,8 @@ resource "aws_instance" "Demo_Server" {
   key_name               = var.key_name
 
   tags = {
-    Name = "UbuntuServer"
-    Type = "Docker"
+    Name = "Kubernetes_Servers"
+    Type = "Kubernetes_Master"
   }
 
 }
@@ -23,7 +23,8 @@ resource "aws_instance" "redhat_servers" {
   key_name               = var.key_name
   user_data              = file("init_script.sh")
   tags = {
-    Name = "Redhat_Server_${count.index + 1}"
+    Name = "Kubernetes_Servers"
+    Type = "Kubernetes_Worker"
   }
 
 
