@@ -1,5 +1,5 @@
 /* Fetch List of server from AWS and groups based on ec2 instance tag name and value */
-
+#!/usr/bin/env python2.7
 import print
 import boto3
 import json
