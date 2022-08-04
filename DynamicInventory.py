@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3.8
 import pprint
 import boto3
 import json
@@ -21,11 +21,11 @@ def getgroupofhosts(ec2):
             else:
                 hosts = [each_in.public_ip_address]
                 allgroups[tag["Value"]] = hosts
-
-        return allgroups;
+                #print("allgroups",allgroups)
+    return allgroups;
 
 def main():
-    ec2 = boto3.resource('ec2')
+    ec2 = boto3.resource('ec2',region_name='us-east-1')
     all_groups = getgroupofhosts(ec2)
     inventory = {}
     for key, value in all_groups.items():
