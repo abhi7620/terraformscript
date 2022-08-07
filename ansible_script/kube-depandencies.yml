@@ -34,7 +34,7 @@
        name: kubeadm=1.18.3-00
        state: present
 
-- hosts: Kubernetes_masters
+- hosts: Kubernetes_Master
   become: yes
   tasks:
    - name: install kubectl
